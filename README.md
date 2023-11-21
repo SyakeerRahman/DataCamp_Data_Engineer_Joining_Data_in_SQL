@@ -10,7 +10,7 @@ Every step is accompanied by exercises and opportunities to apply the theory and
 
 1. Introducing Inner Joins
 
-- The ins and outs of INNER JOIN [ ]
+- [ ] The ins and outs of INNER JOIN 
 - Your first join
 - Joining with aliased tables
 - USING in action
