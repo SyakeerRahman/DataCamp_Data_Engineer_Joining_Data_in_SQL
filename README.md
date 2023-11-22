@@ -22,7 +22,7 @@ ON cities.country_code = countries.code;
 
 - [ ] Joining with aliased tables
 
-```
+```ruby
 select c.code as country_code, name, year, inflation_rate
 FROM countries AS c
 -- Join to economies (alias e)
