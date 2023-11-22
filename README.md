@@ -83,11 +83,13 @@ ON p.country_code = e.code;
 
 Have a look at the results for Albania from the previous query below. You can see that the 2015 fertility_rate has been paired with 2010 unemployment_rate, and vice versa.
 
-name	year	fertility_rate	unemployment_rate
-Albania	2015	1.663	17.1
-Albania	2010	1.663	14
-Albania	2015	1.793	17.1
-Albania	2010	1.793	14
+| name | year | fertility_rate | unemployment_rate |
+|------------------|------------------|------------------|------------------|
+| Albania    | 2015     | 1.663    | 17.1     |
+| Albania    | 2010     | 1.663    | 14       |
+| Albania    | 2015     | 1.793    | 17.1     |
+| Albania    | 2010     | 1.793    | 14       |
+
 Instead of four records, the query should return two: one for each year. The last join was performed on c.code = e.code, without also joining on year. Your task in this exercise is to fix your query by explicitly stating that both the country code and year should match!
 
 ```ruby
