@@ -10,8 +10,8 @@ Every step is accompanied by exercises and opportunities to apply the theory and
 
 1. Introducing Inner Joins
 
-- [ ] The ins and outs of INNER JOIN 
-- [ ] Your first join
+- [x] The ins and outs of INNER JOIN 
+- [x] Your first join
 
 ```ruby
 SELECT cities.name AS city, countries.name AS country, region
@@ -20,7 +20,7 @@ INNER JOIN countries
 ON cities.country_code = countries.code;
 ```     
 
-- [ ] Joining with aliased tables
+- [x] Joining with aliased tables
 
 ```ruby
 select c.code as country_code, name, year, inflation_rate
@@ -30,7 +30,16 @@ Inner join economies e ON
 -- Match on code field using table aliases
 e.code = c.code
 ```
-- [ ] USING in action
+- [x] USING in action
+
+```ruby
+SELECT c.name AS country, l.name AS language, official
+FROM countries AS c
+INNER JOIN languages AS l
+-- Match using the code column
+USING(code);
+```
+
 - [ ] Defining relationships
 - [ ] Relationships in our database
 - [ ] Inspecting a relationship
