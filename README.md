@@ -13,12 +13,12 @@ Every step is accompanied by exercises and opportunities to apply the theory and
 - [ ] The ins and outs of INNER JOIN 
 - [ ] Your first join
 
-``
+```ruby
 SELECT cities.name AS city, countries.name AS country, region
 FROM cities
 INNER JOIN countries
 ON cities.country_code = countries.code;
-``     
+```     
 
 - [ ] Joining with aliased tables
 
