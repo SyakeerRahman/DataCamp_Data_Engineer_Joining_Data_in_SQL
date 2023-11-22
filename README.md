@@ -14,10 +14,10 @@ Every step is accompanied by exercises and opportunities to apply the theory and
 - [ ] Your first join
 
 ``
-SELECT cities.name AS city, countries.name AS country, region
-FROM cities
-INNER JOIN countries
-ON cities.country_code = countries.code;
+SELECT cities.name AS city, countries.name AS country, region__
+FROM cities__
+INNER JOIN countries__
+ON cities.country_code = countries.code;__
 ``     
 
 - [ ] Joining with aliased tables
