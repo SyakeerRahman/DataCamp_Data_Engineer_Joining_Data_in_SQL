@@ -105,14 +105,114 @@ AND e.year = p.year;
 
 2. Outer Joins, Cross Joins and Self Joins
 
-- [ ] LEFT and RIGHT JOINs
-- [ ] Remembering what is LEFT
-- [ ] This is a LEFT JOIN, right?
-- [ ] Building on your LEFT JOIN
-- [ ] Is this RIGHT?
-- [ ] FULL JOINs
-- [ ] Comparing joins
-- [ ] Chaining FULL JOINs
+- [x] LEFT and RIGHT JOINs
+
+https://youtu.be/LC4My9XgMkg
+
+- [x] Remembering what is LEFT
+      
+- [x] This is a LEFT JOIN, right?
+
+As before, you will be using the cities and countries tables.
+
+You'll begin with an INNER JOIN with the cities table (left) and countries table (right). This helps if you are interested only in records where a country is present in both tables.
+
+You'll then change to a LEFT JOIN. This helps if you're interested in returning all countries in the cities table, whether or not they have a match in the countries table.
+
+```ruby
+SELECT 
+	c1.name AS city, 
+    code, 
+    c2.name AS country,
+    region, 
+    city_proper_pop
+FROM cities AS c1
+-- Join right table (with alias)
+LEFT JOIN countries c2
+ON c1.country_code = c2.code
+ORDER BY code DESC;
+```
+
+- [x] Building on your LEFT JOIN
+    
+You'll now revisit the use of the AVG() function introduced in a previous course.
+
+Being able to build more than one SQL function into your query will enable you to write compact, supercharged queries.
+
+You will use AVG() in combination with a LEFT JOIN to determine the average gross domestic product (GDP) per capita by region in 2010.
+
+```ruby
+SELECT region, AVG(gdp_percapita) AS avg_gdp
+FROM countries AS c
+LEFT JOIN economies AS e
+USING(code)
+WHERE year = 2010
+GROUP BY region
+-- Order by descending avg_gdp
+ORDER BY avg_gdp DESC
+-- Return only first 10 records
+LIMIT 10
+```
+
+- [x] Is this RIGHT?
+
+You learned that right joins are not used as commonly as left joins. A key reason for this is that right joins can always be re-written as left joins, and because joins are typically typed from left to right, joining from the left feels more intuitive when constructing queries.
+
+It can be tricky to wrap one's head around when left and right joins return equivalent results. You'll explore this in this exercise!
+
+```ruby
+-- Modify this query to use RIGHT JOIN instead of LEFT JOIN
+SELECT countries.name AS country, languages.name AS language, percent
+FROM languages
+RIGHT JOIN countries
+USING(code)
+ORDER BY language;
+```
+
+- [x] FULL JOINs
+
+https://youtu.be/0wo-RO1RNNA
+
+- [x] Comparing joins
+
+In this exercise, you'll examine how results can differ when performing a full join compared to a left join and inner join by joining the countries and currencies tables. You'll be focusing on the North American region and records where the name of the country is missing.
+
+You'll begin with a full join with countries on the left and currencies on the right. Recall the workings of a full join with the diagram below!
+
+```ruby
+SELECT name AS country, code, region, basic_unit
+FROM countries
+-- Join to currencies
+INNER JOIN currencies 
+USING (code)
+WHERE region = 'North America' 
+	OR name IS NULL
+ORDER BY region;
+```
+
+- [X] Chaining FULL JOINs
+
+As you have seen in the previous chapter on INNER JOIN, it is possible to chain joins in SQL, such as when looking to connect data from more than two tables.
+
+Suppose you are doing some research on Melanesia and Micronesia, and are interested in pulling information about languages and currencies into the data we see for these regions in the countries table. Since languages and currencies exist in separate tables, this will require two consecutive full joins involving the countries, languages and currencies tables.
+
+```ruby
+SELECT 
+	c1.name AS country, 
+    region, 
+    l.name AS language,
+	basic_unit, 
+    frac_unit
+FROM countries as c1 
+-- Full join with languages (alias as l)
+FULL JOIN languages as l 
+USING(code)
+-- Full join with currencies (alias as c2)
+FULL JOIN currencies AS c2
+USING(code)
+WHERE region LIKE 'M%esia';
+```
+
 - [ ] Crossing into CROSS JOIN
 - [ ] Histories and languages
 - [ ] Choosing your join
