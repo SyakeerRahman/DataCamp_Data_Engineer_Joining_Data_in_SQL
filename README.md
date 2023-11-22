@@ -21,6 +21,15 @@ ON cities.country_code = countries.code;
 ``     
 
 - [ ] Joining with aliased tables
+
+``
+select c.code as country_code, name, year, inflation_rate
+FROM countries AS c
+-- Join to economies (alias e)
+Inner join economies e ON 
+-- Match on code field using table aliases
+e.code = c.code
+``
 - [ ] USING in action
 - [ ] Defining relationships
 - [ ] Relationships in our database
