@@ -213,7 +213,7 @@ USING(code)
 WHERE region LIKE 'M%esia';
 ```
 
-- [ ] Crossing into CROSS JOIN
+- [X] Crossing into CROSS JOIN
 
 https://youtu.be/g5klp6LEMKQ
 
@@ -288,14 +288,14 @@ WHERE p1.year = 2010
 
 3. Set Theory for SQL Joins
 
-- [ ] Set theory for SQL Joins
+- [X] Set theory for SQL Joins
 
-
+https://youtu.be/xN53jjT996g
 
 - [X] UNION vs. UNION ALL
 
       
-- [ ] Comparing global economies
+- [X] Comparing global economies
 
 Are you ready to perform your first set operation?
 
@@ -313,7 +313,7 @@ select * from economies2019
 ORDER BY code, year;
 ```
 
-- [ ] Comparing two set operations
+- [X] Comparing two set operations
 
 You learned in the video exercise that UNION ALL returns duplicates, whereas UNION does not. In this exercise, you will dive deeper into this, looking at cases for when UNION is appropriate compared to UNION ALL.
 
@@ -329,9 +329,9 @@ FROM populations
 ORDER BY code, year;
 ```
 
-- [ ] At the INTERSECT
+- [X] At the INTERSECT
 
-
+https://youtu.be/voH7vNK4m3M
 
 - [X] INTERSECT
 
@@ -349,9 +349,9 @@ FROM countries;
 ```
 
 - [X] Review UNION and INTERSECT
-- [ ] EXCEPT
+- [X] EXCEPT
 
-
+https://youtu.be/6SxLAhmSVEo
 
 - [X] You've got it, EXCEPT...
 
@@ -375,13 +375,13 @@ ORDER BY name;
 
 4. Subqueries
 
-- [ ] Subquerying with semi joins and anti joins
+- [X] Subquerying with semi joins and anti joins
 
-
+https://youtu.be/y2O_cJirmQ4
 
 - [X] Multiple WHERE clauses
 
-- [ ] Semi join
+- [X] Semi join
 
 Great job getting acquainted with semi joins and anti joins! You are now going to practice using semi joins.
 
@@ -426,9 +426,9 @@ WHERE continent = 'Oceania'
     FROM currencies);
 ```
 
-- [ ] Subqueries inside WHERE and SELECT
+- [X] Subqueries inside WHERE and SELECT
 
-
+https://youtu.be/d9uT8Cbtrh4
 
 - [X] Subquery inside WHERE
 
@@ -563,9 +563,9 @@ ORDER BY city_perc DESC
 LIMIT 10;
 ```
 
-- [ ] The finish line
+- [X] The finish line
 
-
+https://youtu.be/9nS4SrLN4F0
 
 
 
